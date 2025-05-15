@@ -1,8 +1,27 @@
-body {
-  background-color: #272822;
-}
+@import "./vars.css";
+@import "./base.css";
+@import "./utility.css";
 
 #edgebug-gif {
-  width: 64rem;
-  height: 33.75rem;
+  left: -3% !important;
+  width: 80%;
+  max-width: 720px;
+  background-color: var(--bg-colour);
+}
+
+#edgebug-gif-fallback {
+  z-index: -1;
+}
+
+#edgebug-gif-wrapper {
+  width: fit-content;
+  height: fit-content;
+}
+
+#nav-bar {
+  display: flex;
+  height: 1.2rem;
+  padding: 0 0.5rem;
+  border-bottom: 1px solid;
+  z-index: 32;
 }

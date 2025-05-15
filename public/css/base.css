@@ -1,0 +1,12 @@
+@import "./vars.css";
+
+body {
+  background-color: var(--bg-colour);
+  color: var(--font-colour);
+  font-family: var(--font-family);
+  border-color: var(--accent-colour);
+}
+
+a {
+  cursor: pointer;
+}
