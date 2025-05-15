@@ -20,3 +20,16 @@
 .hidden {
   display: none !important;
 }
+
+/*alternate link styling by wrapping the contents in a span*/
+a > span::before {
+  content: "[";
+}
+
+a > span::after {
+  content: "]";
+}
+
+a:has(> span) {
+  text-decoration: none;
+}
