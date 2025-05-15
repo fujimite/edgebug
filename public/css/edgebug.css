@@ -5,6 +5,8 @@
 #edgebug-gif {
   left: -3% !important;
   width: 80%;
+  height: auto;
+  display: block;
   max-width: 720px;
   background-color: var(--bg-colour);
 }
