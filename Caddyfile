@@ -1,0 +1,23 @@
+{
+  debug
+}
+
+:8080 {
+  handle_path /assets/* {
+    root * ./public/assets
+    file_server
+  }
+    handle_path /css/* {
+    root * ./public/css
+    file_server
+  }
+  handle_path /js/* {
+    root * ./public/js
+    file_server
+  }
+  handle {
+    root * ./public/html
+    file_server
+    encode gzip zstd
+  }
+}
