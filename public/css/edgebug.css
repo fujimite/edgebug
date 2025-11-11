@@ -42,3 +42,19 @@
 #nav-bar a:not(:last-child) {
   padding-right: 0.2ch;
 }
+
+#nav-visibility-state:checked + #nav-list #hide-btn #hide-btn-state::before {
+  content: "−";
+}
+
+#nav-visibility-state:not(:checked) + #nav-list #hide-btn #hide-btn-state::before {
+  content: "+";
+}
+
+#nav-visibility-state:checked + #nav-list li:not(#hide-btn) {
+  display: list-item;
+}
+
+#nav-visibility-state:not(:checked) + #nav-list li:not(#hide-btn) {
+  display: none;
+}

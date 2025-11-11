@@ -10,8 +10,13 @@
 </head>
 <body>
   <nav id="nav-bar" class="fix-top">
-    <ul>
-      <li><a><span>+</span></a></li>
+    <input id="nav-visibility-state" type="checkbox" hidden>
+    <ul id="nav-list">
+      <li id="hide-btn">
+      <label for="nav-visibility-state">
+        <a><span><span id="hide-btn-state"></span></span></a>
+        </label>
+      </li>
       <li><a href="https://search.edgebug.net"><span>search</span></a></li>
       <li><a href="https://lamp.edgebug.net"><span>lamp</span></a></li>
       <li><a href="https://github.com/fujimite/edgebug"><span>git</span></a></li>
