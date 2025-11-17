@@ -5,7 +5,7 @@
 (php) {
   root * ./public/php
   rewrite * /{args[0]}.php
-  php_fastcgi unix//run/php/php-fpm.sock
+  php_fastcgi 127.0.0.1:9999
 }
 
 (folder) {

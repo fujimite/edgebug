@@ -1,3 +1,32 @@
+<?php
+require_once __DIR__ . '/lib/genware.php';
+
+$repos = __DIR__ . '/resources/repos.txt';
+$cache_file = __DIR__ . '/cache/wares_cache.html';
+$cache = __DIR__ . '/cache';
+$box_w = 76;
+$cache_ttl = 16934400; //28 days
+
+if (!is_dir($cache)) {
+    mkdir($cache, 0750, true);
+}
+
+if (cache_valid($cache_file, $cache_ttl)) {
+    comment("page served from cache");
+    $wares = file_get_contents($cache_file);
+} else {
+    $wares = generate_wares($repos, $box_w);
+
+    if (!empty($wares)) {
+        if (file_put_contents($cache_file, $wares, LOCK_EX) !== false) {
+            chmod($cache_file, 0640);
+        } else {
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,20 +71,9 @@
          █████████████████████████                     ███  ███      ██████  
                                  ███████████████████     ████    █████       
       </pre>
-      <pre class="ware-pane">
-╔════════════════════════════════- d2m3u -═════════════════════════════════╗
-║ d2m3u is a command line program to generate m3u playlist from local or   ║
-║ web directories. currently available in binary form for mac and linux,   ║
-║ with windows support via msys2 a work in progress.                       ║
-║                                                                          ║
-║ download ver 0.1 (pre-release):                                          ║
-║ - <a href="https://github.com/fujimite/d2m3u/releases/download/v0.1/d2m3u-v0.1-darwin-arm64.zip">darwin-arm64</a>                                                           ║
-║ sha256:fe235912630b0367f1c2cd52583d476c88642ae5fa870e3a43a831fedb907681  ║
-║ - <a href="https://github.com/fujimite/d2m3u/releases/download/v0.1/d2m3u-v0.1-linux-x86_64.zip">linux-x86_64</a>                                                           ║
-║ sha256:fa4cb8e81f4524748555d55651f664cc0d79122506d96fdd166a44d94a5a7fa9  ║
-║                                                                          ║
-║ source: <a href="https://github.com/fujimite/d2m3u/">github</a>                                                           ║
-╚══════════════════════════════════════════════════════════════════════════╝</pre>
+      <?php 
+        echo $wares; 
+      ?>
     </div>
   </div>
 </body>

@@ -1,3 +1,5 @@
 caddy*
 !Caddyfile
+!Caddyfile-win
 *.code-workspace
+public/php/cache
