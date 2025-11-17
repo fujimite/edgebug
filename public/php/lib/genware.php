@@ -250,8 +250,9 @@ function build_ware_box($repo_name, $repo_owner, $box_w) {
 function generate_wares($repos, $box_w) {
     $repos_file_path = realpath($repos);
     
+    $allowed_base = realpath(__DIR__ . '/..');
     if ($repos_file_path === false || 
-        strpos($repos_file_path, realpath(__DIR__)) !== 0) {
+        strpos($repos_file_path, $allowed_base) !== 0) {
         return "<!-- error: repo folder not found -->\n";
     }
     
