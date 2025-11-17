@@ -8,7 +8,7 @@ http://edgebug.net/
 
 Unix:
 
-4. run with `caddy run --config Caddyfile-win`
+4. run with `caddy run --config Caddyfile`
 5. run php server listening on `/run/php/php-fpm.sock`
 
 Windows:
