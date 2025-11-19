@@ -39,7 +39,7 @@ if (cache_valid($cache_file, $cache_ttl)) {
 </head>
 <body>
   <nav id="nav-bar" class="fix-top">
-    <input id="nav-visibility-state" type="checkbox" hidden>
+    <input id="nav-visibility-state" type="checkbox" hidden checked>
     <ul id="nav-list">
       <li id="hide-btn">
       <label for="nav-visibility-state">
@@ -49,7 +49,6 @@ if (cache_valid($cache_file, $cache_ttl)) {
       <li><a href="/"><span>home</span></a></li>
       <li><a href="/wares"><span>wares</span></a></li>
       <li><a href="https://search.edgebug.net"><span>search</span></a></li>
-      <li><a href="https://lamp.edgebug.net"><span>lamp</span></a></li>
       <li><a href="https://github.com/fujimite/edgebug"><span>git</span></a></li>
     </ul>
   </nav>
