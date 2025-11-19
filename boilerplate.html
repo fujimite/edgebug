@@ -13,7 +13,7 @@
     <input id="nav-visibility-state" type="checkbox" hidden checked>
     <ul id="nav-list">
       <li id="hide-btn">
-      <label for="nav-visibility-state">
+        <label for="nav-visibility-state">
         <a><span><span id="hide-btn-state"></span></span></a>
         </label>
       </li>
@@ -21,6 +21,17 @@
       <li><a href="/wares"><span>wares</span></a></li>
       <li><a href="https://search.edgebug.net"><span>search</span></a></li>
       <li><a href="https://github.com/fujimite/edgebug"><span>git</span></a></li>
+      <li id="info-btn">
+        <input id="info-box-state" type="checkbox" hidden>
+        <label for="info-box-state">
+          <a><span>info</span></a>
+        </label>
+        <div id="info-box">
+          <label for="info-box-state" id="close-btn">×</label>
+          <pre> page info 
+    page information</pre>
+        </div>
+      </li>
     </ul>
   </nav>
   <div id="content">
