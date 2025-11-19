@@ -39,7 +39,7 @@ if (cache_valid($cache_file, $cache_ttl)) {
 </head>
 <body>
   <nav id="nav-bar" class="fix-top">
-    <input id="nav-visibility-state" type="checkbox" hidden checked>
+    <input id="nav-visibility-state" type="checkbox" hidden>
     <ul id="nav-list">
       <li id="hide-btn">
         <label for="nav-visibility-state">
