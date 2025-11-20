@@ -28,6 +28,13 @@
   handle /wares {
     import php wares
   }
+
+  @phpfiles path *.php
+  handle @phpfiles {
+    root * ./public/html
+    rewrite * /403.html
+    file_server
+  }
   
   handle {
     try_files {path}.html {path}/ {path}
@@ -37,6 +44,10 @@
   handle_errors {
     @notfound expression {http.error.status_code} == 404
     rewrite @notfound /404.html
+    file_server
+    
+    @forbidden expression {http.error.status_code} == 403
+    rewrite @forbidden /403.html
     file_server
   }
 }
