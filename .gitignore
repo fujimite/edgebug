@@ -1,5 +1,10 @@
+*.code-workspace
+#caddy stuff
 caddy*
 !Caddyfile
 !Caddyfile-win
-*.code-workspace
+#cache
 public/php/cache
+#api stuff
+keys.json
+public/share
