@@ -9,7 +9,7 @@ http://edgebug.net/
 Unix:
 
 4. run with `caddy run --config Caddyfile`
-5. run php server listening on `/run/php/php-fpm.sock`
+5. run php server listening on `/run/php/php-fpm.sock`, include extensions in php.ini
 
 Windows:
 
