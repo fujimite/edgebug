@@ -25,7 +25,7 @@ $wares = cache_serve($cache_name, $cache_ttl, function() use ($repos, $box_w) {
 </head>
 <body>
   <nav id="nav-bar" class="fix-top">
-    <input id="nav-visibility-state" type="checkbox" hidden>
+    <input id="nav-visibility-state" type="checkbox" hidden checked>
     <ul id="nav-list">
       <li id="hide-btn">
         <label for="nav-visibility-state">
@@ -37,7 +37,7 @@ $wares = cache_serve($cache_name, $cache_ttl, function() use ($repos, $box_w) {
       <li><a href="https://search.edgebug.net"><span>search</span></a></li>
       <li><a href="https://github.com/fujimite/edgebug"><span>git</span></a></li>
       <li id="info-btn">
-        <input id="info-box-state" type="checkbox" hidden checked>
+        <input id="info-box-state" type="checkbox" hidden>
         <label for="info-box-state">
           <a><span>info</span></a>
         </label>

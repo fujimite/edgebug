@@ -44,8 +44,8 @@
 #info-box-state:checked ~ #info-box {
   display: block;
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 7.5%;
+  left: 39ch;
   transform: translate(-50%, -50%);
   background: beige;
   border: 3px double black;
