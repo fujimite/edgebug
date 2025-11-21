@@ -4,7 +4,7 @@ http://edgebug.net/
 ### development
 1. download `caddy` binary
 2. place in project root folder
-3. install php cgi, including openssl, curl, and mbstring.
+3. install php cgi, including `openssl`, `curl`, `mbstring`, and `fileinfo`.
 
 Unix:
 
