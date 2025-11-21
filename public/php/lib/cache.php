@@ -10,7 +10,7 @@ function cache_serve($cache_name, $ttl, $generator_callback) {
   $cache_file = $cache . '/' . $cache_name . '.cache';
 
   if (cache_valid($cache_file, $ttl)) {
-      echo '<!-- page served from cache ' . date('Y-m-d H:i:s', filemtime($cache_file)) . ' -->' . "\n";
+      echo '<!-- page served from cache ' . filemtime($cache_file) . ' -->' . "\n";
       return file_get_contents($cache_file);
   } else {
       $data = $generator_callback();
