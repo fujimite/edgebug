@@ -1,29 +1,15 @@
 <?php
 require_once __DIR__ . '/lib/genware.php';
+require_once __DIR__ . '/lib/cache.php';
 
 $repos = __DIR__ . '/resources/repos.txt';
-$cache_file = __DIR__ . '/cache/wares_cache.html';
-$cache = __DIR__ . '/cache';
+$cache_name = 'wares';
 $box_w = 76;
 $cache_ttl = 16934400; //28 days
 
-if (!is_dir($cache)) {
-    mkdir($cache, 0750, true);
-}
-
-if (cache_valid($cache_file, $cache_ttl)) {
-    comment("page served from cache");
-    $wares = file_get_contents($cache_file);
-} else {
-    $wares = generate_wares($repos, $box_w);
-
-    if (!empty($wares)) {
-        if (file_put_contents($cache_file, $wares, LOCK_EX) !== false) {
-            chmod($cache_file, 0640);
-        } else {
-        }
-    }
-}
+$wares = cache_serve($cache_name, $cache_ttl, function() use ($repos, $box_w) {
+    return generate_wares($repos, $box_w);
+});
 
 ?>
 
@@ -51,7 +37,7 @@ if (cache_valid($cache_file, $cache_ttl)) {
       <li><a href="https://search.edgebug.net"><span>search</span></a></li>
       <li><a href="https://github.com/fujimite/edgebug"><span>git</span></a></li>
       <li id="info-btn">
-        <input id="info-box-state" type="checkbox" hidden>
+        <input id="info-box-state" type="checkbox" hidden checked>
         <label for="info-box-state">
           <a><span>info</span></a>
         </label>

@@ -50,7 +50,6 @@ function gh_api_fetch($url) {
         $response = curl_exec($ch);
         $http_stat = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error = curl_error($ch);
-        curl_close($ch);
         
         if ($response === false) {
             return null;
@@ -289,19 +288,5 @@ function generate_wares($repos, $box_w) {
         $output .= build_ware_box($repo_name, $repo_owner, $box_w);
     }
     return $output;
-}
-
-function comment($message) {
-    echo "<!--" . htmlspecialchars($message) . " -->\n";
-}
-
-function cache_valid($cache_file, $max_ttl) {
-    if (!file_exists($cache_file)) {
-        return false;
-    }
-    
-    $cache_age = time() - filemtime($cache_file);
-    
-    return $cache_age < $max_ttl;
 }
 ?>

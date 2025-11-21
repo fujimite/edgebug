@@ -4,7 +4,7 @@
 @import "./nav.css";
 
 #info-box pre::before {
-  content: "rev 4-1125\00000a\00000a";
+  content: "rev 5-1125\00000a\00000a";
 }
 
 #edgebug-gif {
