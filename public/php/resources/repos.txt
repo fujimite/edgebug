@@ -1,1 +1,2 @@
 fujimite,d2m3u
+fujimite,d2m3u-win-gui
