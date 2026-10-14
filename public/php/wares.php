@@ -5,7 +5,7 @@ require_once __DIR__ . '/lib/cache.php';
 $repos = __DIR__ . '/resources/repos.txt';
 $cache_name = 'wares';
 $box_w = 76;
-$cache_ttl = 16934400; //28 days
+$cache_ttl = 4233600; //7 days
 
 $wares = cache_serve($cache_name, $cache_ttl, function() use ($repos, $box_w) {
     return generate_wares($repos, $box_w);
